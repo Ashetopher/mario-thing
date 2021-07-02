@@ -1,0 +1,46 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int get_positive_int(void);
+int print_for_iteration(int i);
+
+int main(void)
+{
+    string gap = "  ";
+    int height = get_positive_int();
+    for (int i = 0; i < height; i++)
+    {
+        // prints gap at the start of line for height - 1
+        for (int g = 0; g < (height-1) -i; g++)
+        {
+            printf(" ");
+        }
+        // prints i +1 hashes with a 2 space gap inbetween.
+        // e.g. for iteration 1 prints ##  ## 
+        print_for_iteration(i);
+        printf("%s", gap);
+        print_for_iteration(i);
+        printf("\n");
+    }
+}
+
+int get_positive_int(void)
+{
+    int n;
+    do
+    {
+        n = get_int("Height: ");
+    }
+    while (n < 1 || n > 8);
+    return n;
+}
+
+int print_for_iteration(int i)
+{
+    int x = 0;
+    for (int j= 0; j < i+1; j++)
+        {
+        printf("#");
+        }
+        return x;
+}
